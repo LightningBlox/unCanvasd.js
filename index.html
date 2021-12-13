@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>unCanvasd.js</title>
+</head>
+<body>
+
+<div id="canvas"></div>
+
+<script>
+// LOAD CANVAS
+var canvas = document.getElementById("canvas");
+canvas.style.userSelect = "none";
+// CANVAS FUNCTIONS
+function cnvsBgColor(color) {
+ canvas.style.backgroundColor = color;
+}
+function cnvsSize(width, height) {
+ canvas.style.width = width;
+ canvas.style.height = height;
+}
+function cnvsText(text, id) {
+ canvas.innerHTML += "<span id=" + id + ">" + text + "</span>";
+}
+function cnvsColor(id, colorr) {
+ document.getElementById(id).style.color = colorr;
+}
+function cnvsBorder(type) {
+ canvas.style.border = type;
+}
+function cnvsOnclick(id, fnction) {
+ document.getElementById(id).setAttribute("onclick", fnction);
+}
+function cnvsFontFamily(id, fontfamily) {
+ document.getElementById(id).style.fontFamily = fontfamily;
+}
+function cnvsFontWeight(id, fontweight) {
+ document.getElementById(id).style.fontWeight = fontweight;
+}
+// RUN THE FUNCTIONS
+cnvsBgColor("black");
+cnvsSize("100%", "500px");
+cnvsText("MyText", "text1");
+cnvsBorder("3px solid grey");
+cnvsOnclick("text1", "alert(this.innerHTML);");
+cnvsColor("text1", "white");
+cnvsFontFamily("text1", "arial");
+cnvsFontWeight("text1", "900");
+</script>
+</body>
+</html>
